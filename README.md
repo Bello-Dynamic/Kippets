@@ -4,8 +4,7 @@
 Welcome to the official code examples repository for Konnexu — the community platform built for creators, brands, forums, fandoms, private 
 communities, and everyone building meaningful connections online.
 
-Whether you're customizing themes, building integrations, creating plugins, or experimenting with community features, this repo is your
-playground. 🚀
+Whether you're customizing themes, building blocks, or experimenting with community features, this repo is your playground. 🚀
 
 ---
 
@@ -21,7 +20,8 @@ Just code and creativity.
 
 ## 🌍 What is Konnexu?
 
-Konnexu is a modern community platform designed to help people build spaces where conversations, creativity, and communities thrive.
+Konnexu is a modern community platform designed to help people build spaces where conversations, creativity, and communities 
+thrive.
 
 Think:
 
