@@ -6,13 +6,15 @@ Follow this guide to format your community-submitted blocks and templates correc
 
 ## 📁 Repository Structure
 
-Every new component must be placed inside its own folder within the `blocks/` directory using this exact structure:
+Place every new component inside its own folder within the `blocks/` directory using this layout:
 
+```text
 blocks/
 └── your-block-name/
     ├── README.md      (Setup instructions)
     ├── index.html     (HTML structure)
     └── style.css      (Optional custom CSS)
+```
 
 ---
 
