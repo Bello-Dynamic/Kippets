@@ -6,7 +6,8 @@
 **Brought to you with ❤️ by the team at Bello Dynamic.**
 
 The internet is at its best when it brings people closer together. This repository is the official playground for developers, creators, and 
-tinkerers building on **[Konnexu](https://konnexu.com)**—the ultimate platform for social networks, forums, fandoms, and private communities.
+tinkerers building on **[Konnexu](https://konnexu.com)**—the ultimate platform for social networks, brand communities, forums, fandoms, and 
+private communities.
 
 ---
 
