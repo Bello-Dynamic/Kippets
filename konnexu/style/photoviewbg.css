@@ -1,0 +1,15 @@
+/*
+  Custom Styles for: Photo view background
+  Author: DonnaScriptTechs
+  Link to Community Tutorial Thread:
+*/
+
+/* Photo background */
+/* light and dark mode */
+
+a[href*="/photos/"] article.card-content,
+article.card-content:has(img[src*="/files/photos/"]),
+div.card > div.flex.gap-3.flex-wrap.p-4:has(article.card-content img[src*="/files/photos/"]) {
+    background: #141518 !important; /*change to your color*/
+    border-radius: 12px;
+}
