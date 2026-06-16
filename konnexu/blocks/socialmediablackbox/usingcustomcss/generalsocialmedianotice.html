@@ -1,14 +1,32 @@
 <!--
-  Konnexu Community Block: Social Media Warning Box with Custom CSS
+  Konnexu Community Block: Social Media Warning Box (Expandable with Actions)
   Author: DonnaScriptTechs
-  Link to Community Tutorial Thread: https://community.konnexu.com/forum/thread/48/social-media-black-box-warning-konnexu-and-you
+  Tutorial: https://community.konnexu.com/forum/thread/48/social-media-black-box-warning-konnexu-and-you
 -->
-<div class="social-warning-label">
-  <div class="warning-header">
-    <span class="warning-icon">⚠️</span>
-    <strong>WARNING: SOCIAL MEDIA USAGE</strong>
-  </div>
-  <div class="warning-body">
+
+<!-- Main Wrapper: Let native HTML handle the interaction -->
+<details class="konnexu-social-warning-label">
+  <!-- 1. Clickable Header Toggle -->
+  <summary class="konnexu-warning-header">
+    <div class="konnexu-warning-header-left">
+      <!-- FIXED: Changed strong to h2 for a structural page landmark -->
+      <h2 class="konnexu-warning-title">
+        <span class="konnexu-warning-icon" aria-hidden="true">⚠️</span>
+        WARNING: SOCIAL MEDIA USAGE
+      </h2>
+    </div>
+    <!-- Arrow text hidden as intended; native details will also announce state -->
+    <span class="konnexu-warning-arrow" aria-hidden="true">▶</span>
+  </summary>
+
+  <!-- 2. Expandable Content Body -->
+  <div class="konnexu-warning-body">
     <p>Excessive use may negatively impact mental health, attention span, and well-being. Practice mindful engagement and take regular screen breaks.</p>
+
+    <!-- 3. Action Navigation Links -->
+    <div class="konnexu-warning-actions">
+      <a href="/terms" class="konnexu-btn-primary">Terms</a>
+      <a href="/privacy" class="konnexu-btn-secondary">Privacy</a>
+    </div>
   </div>
-</div>
+</details>
