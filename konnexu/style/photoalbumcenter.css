@@ -1,0 +1,38 @@
+/**
+ * Custom Photo Album Centered Grid Styles
+ * Author: DonnaScriptTechs
+ * Tutorial: https://community.konnexu.com/forum/thread/76/photo-album-view-photos-not-centered
+ */
+
+/* ==========================================================================
+   1. Album Row Layout (Grid Alignment)
+   ========================================================================== */
+/* Targets the album container row and converts it into a centered grid layout */
+div.flex.gap-3.flex-wrap.p-4.flex-row:has(img[src*="/files/photos/"]) {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem)) !important;
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+}
+
+/* ==========================================================================
+   2. Desktop Constraints (Responsive Capping)
+   ========================================================================== */
+/* Limits grid structure to a maximum of 3 neatly aligned columns on viewports >= 768px */
+@media (min-width: 768px) {
+    div.flex.gap-3.flex-wrap.p-4.flex-row:has(img[src*="/files/photos/"]) {
+        max-width: 63.5rem !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
+
+/* ==========================================================================
+   3. Inner Component Scaling
+   ========================================================================== */
+/* Forces nested article cards to smoothly expand and fill their allocated grid tracks */
+div.flex.gap-3.flex-wrap.p-4.flex-row:has(img[src*="/files/photos/"]) article.card-content {
+    width: 100% !important;
+    max-width: 100% !important;
+}

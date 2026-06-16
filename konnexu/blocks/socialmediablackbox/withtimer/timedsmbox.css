@@ -1,0 +1,144 @@
+/**
+ * Konnexu Community Block Stylesheet: Social Media Warning Box with Timer
+ * Author: DonnaScriptTechs
+ * Tutorial: https://community.konnexu.com/forum/thread/48/social-media-black-box-warning-konnexu-and-you
+ */
+
+/* ==========================================================================
+   Konnexu High-Performance Pure CSS Short-HTML Timer Engine
+   ========================================================================== */
+
+/* 1. The full 60s step timeline matrix: Safely runs on the un-clicked text layer */
+@keyframes kxShortTimer {
+    0%, 1.66% { content: "60s"; }
+    1.67%, 3.33% { content: "59s"; }
+    3.34%, 5.00% { content: "58s"; }
+    5.01%, 6.66% { content: "57s"; }
+    6.67%, 8.33% { content: "56s"; }
+    8.34%, 10.00% { content: "55s"; }
+    10.01%, 11.66% { content: "54s"; }
+    11.67%, 13.33% { content: "53s"; }
+    13.34%, 15.00% { content: "52s"; }
+    15.01%, 16.66% { content: "51s"; }
+    16.67%, 18.33% { content: "50s"; }
+    18.34%, 20.00% { content: "49s"; }
+    20.01%, 21.66% { content: "48s"; }
+    21.67%, 23.33% { content: "47s"; }
+    23.34%, 25.00% { content: "46s"; }
+    25.01%, 26.66% { content: "45s"; }
+    26.67%, 28.33% { content: "44s"; }
+    28.34%, 30.00% { content: "43s"; }
+    30.01%, 31.66% { content: "42s"; }
+    31.67%, 33.33% { content: "41s"; }
+    33.34%, 35.00% { content: "40s"; }
+    35.01%, 36.66% { content: "39s"; }
+    36.67%, 38.33% { content: "38s"; }
+    38.34%, 40.00% { content: "37s"; }
+    40.01%, 41.66% { content: "36s"; }
+    41.67%, 43.33% { content: "35s"; }
+    43.34%, 45.00% { content: "34s"; }
+    45.01%, 46.66% { content: "33s"; }
+    46.67%, 48.33% { content: "32s"; }
+    48.34%, 50.00% { content: "31s"; }
+    50.01%, 51.66% { content: "30s"; }
+    51.67%, 53.33% { content: "29s"; }
+    53.34%, 55.00% { content: "28s"; }
+    55.01%, 56.66% { content: "27s"; }
+    56.67%, 58.33% { content: "26s"; }
+    58.34%, 60.00% { content: "25s"; }
+    60.01%, 61.66% { content: "24s"; }
+    61.67%, 63.33% { content: "23s"; }
+    63.34%, 65.00% { content: "22s"; }
+    65.01%, 66.66% { content: "21s"; }
+    66.67%, 68.33% { content: "20s"; }
+    68.34%, 70.00% { content: "19s"; }
+    70.01%, 71.66% { content: "18s"; }
+    71.67%, 73.33% { content: "17s"; }
+    73.34%, 75.00% { content: "16s"; }
+    75.01%, 76.66% { content: "15s"; }
+    76.67%, 78.33% { content: "14s"; }
+    78.34%, 80.00% { content: "13s"; }
+    80.01%, 81.66% { content: "12s"; }
+    81.67%, 83.33% { content: "11s"; }
+    83.34%, 85.00% { content: "10s"; }
+    85.01%, 86.66% { content: "9s"; }
+    86.67%, 88.33% { content: "8s"; }
+    88.34%, 90.00% { content: "7s"; }
+    90.01%, 91.66% { content: "6s"; }
+    91.67%, 93.33% { content: "5s"; }
+    93.34%, 95.00% { content: "4s"; }
+    95.01%, 96.66% { content: "3s"; }
+    96.67%, 98.33% { content: "2s"; }
+    98.34%, 100% { content: "1s"; }
+}
+
+/* Button Unlocking Keyframe Trigger */
+@keyframes kxButtonReveal {
+    0%, 99.99% { opacity: 0; visibility: hidden; pointer-events: none; }
+    100% { opacity: 1; visibility: visible; pointer-events: auto; }
+}
+
+/* Base Badge Style Frame */
+.konnexu-timer-text {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    background-color: #000000;
+    border: 2px solid #000000;
+    border-radius: 0.125rem;
+    padding: 0.25rem 0.5rem;
+    min-width: 2.5rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Active Countdown Sequence Assignment */
+.konnexu-timer-text::after {
+    content: "60s";
+    animation: kxShortTimer 60s linear forwards;
+}
+
+/* Button Display Rules */
+.konnexu-delayed-button {
+    animation: kxButtonReveal 60s steps(1) forwards;
+}
+
+/* Accessible focus outlines */
+.kx-focus:focus-visible {
+    outline: 3px solid #2563eb !important;
+    outline-offset: 4px !important;
+}
+
+/* ==========================================================================
+   REACT UNHACKABLE INTERACTION SELECTORS (:target)
+   ========================================================================== */
+
+/* STEP 1: Slide close and hide the body pane text container layout */
+#kx-box:target .kx-pane {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+/* STEP 2: Instantly turn the outer badge border and canvas success green */
+#kx-box:target .konnexu-timer-text {
+    background-color: #16a34a !important; /* Tailwind success green */
+    border-color: #16a34a !important;
+}
+
+/* STEP 3: Kill the active countdown digits animation completely */
+#kx-box:target .konnexu-timer-text::after {
+    display: none !important;
+    content: "" !important;
+    animation: none !important;
+}
+
+/* STEP 4: Reveal the standalone checkbox character hidden inside the HTML layout */
+#kx-box:target .kx-static-checkmark {
+    display: inline !important;
+    visibility: visible !important;
+}

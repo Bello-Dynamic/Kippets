@@ -1,15 +1,33 @@
-/*
-  Custom Styles for: Photo view background
-  Author: DonnaScriptTechs
-  Link to Community Tutorial Thread: https://community.konnexu.com/forum/thread/73/change-konnexu-photo-view-background
-*/
+/**
+ * Custom Photo View Background Styles
+ * Author: DonnaScriptTechs
+ * Tutorial: https://community.konnexu.com/forum/thread/73/change-konnexu-photo-view-background
+ */
 
-/* Photo background */
-/* light and dark mode */
-
+/* ==========================================================================
+   1. Photo Background (Light/Dark Default)
+   ========================================================================== */
 a[href*="/photos/"] article.card-content,
 article.card-content:has(img[src*="/files/photos/"]),
 div.card > div.flex.gap-3.flex-wrap.p-4:has(article.card-content img[src*="/files/photos/"]) {
-    background: #141518 !important; /*change to your color*/
+    background: #141518 !important; /* Base background color */
     border-radius: 12px;
+}
+
+/* ==========================================================================
+   2. Photo Background (Dark Mode Specific Override)
+   ========================================================================== */
+.dark a[href*="/photos/"] article.card-content,
+.dark article.card-content:has(img[src*="/files/photos/"]),
+.dark div.card > div.flex.gap-3.flex-wrap.p-4:has(article.card-content img[src*="/files/photos/"]) {
+    background: #141518 !important; /* Dark mode override color */
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   3. Outer Container Border Fix
+   ========================================================================== */
+/* Prevents underlying container background from bleeding past rounded corners */
+div.card:has(article.card-content img[src*="/files/photos/"]) {
+    border-radius: 12px 12px 0 0 !important;
 }
