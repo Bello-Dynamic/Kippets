@@ -1,50 +1,57 @@
 <!--
-  Konnexu Community Block: Social Media Warning Box Default CSS
+  Konnexu Community Block: Social Media Notice (Tailwind CSS Version)
   Author: DonnaScriptTechs
-  Link to Community Tutorial Thread: https://community.konnexu.com/forum/thread/48/social-media-black-box-warning-konnexu-and-you
+  Tutorial: https://community.konnexu.com/forum/thread/48/social-media-black-box-warning-konnexu-and-you
 -->
-<!-- Social Media Warning Box -->
-<details class="group w-full max-w-2xl">
-	<!-- Header -->
-	<summary class="list-none cursor-pointer bg-black text-white border border-neutral-700 rounded-2xl px-5 py-4 shadow-lg hover:bg-neutral-900 transition">
+
+<!-- Main Wrapper: Native HTML handling with role="region" removed -->
+<details class="group w-full max-w-2xl border-4 border-black">
+	<!-- 1. Clickable Header Toggle -->
+	<!-- ADDED: [&::-webkit-details-marker]:hidden to strip browser arrow -->
+	<!-- ADDED: focus-visible:outline-3 focus-visible:outline-blue-600 focus-visible:outline-offset-4 for accessible focus -->
+	<summary class="list-none cursor-pointer bg-white text-black px-5 py-4 hover:bg-neutral-50 transition select-none [&::-webkit-details-marker]:hidden focus-visible:outline-3 focus-visible:outline-blue-600 focus-visible:outline-offset-4">
 		<span class="flex items-center justify-between gap-4">
 			<span class="flex items-center gap-3">
-				<span class="text-yellow-400 text-lg">⚠</span>
-				<span class="flex flex-col">
-					<span class="font-semibold text-sm uppercase tracking-wide">
+				<span class="text-black text-lg font-bold" aria-hidden="true">⚠️</span>
+				<!-- FIXED: Changed parent block to an h2 tag and wiped default margins with m-0 -->
+				<h2 class="flex flex-col m-0 p-0 normal-case tracking-normal">
+					<strong class="font-bold text-sm uppercase tracking-wide text-black">
 						Social Media Notice
-					</span>
-					<span class="text-xs text-neutral-400 mt-1">
+					</strong>
+					<span class="text-xs text-neutral-700 mt-1 font-normal">
 						Important platform safety and compliance information
 					</span>
-				</span>
+				</h2>
 			</span>
-			<span class="text-neutral-400 text-sm group-open:rotate-180 transition">
-				▼
+			<!-- Arrow icon rotates beautifully via Tailwind's native group-open state modifier -->
+			<span class="inline-block text-black text-xs font-bold transition-transform duration-200 group-open:rotate-90" aria-hidden="true">
+				▶
 			</span>
 		</span>
 	</summary>
 
-	<!-- Expandable Content -->
-	<div class="mt-2 bg-black text-neutral-300 border border-neutral-700 rounded-2xl shadow-lg p-5 text-sm leading-relaxed">
-		<p>
+	<!-- 2. Expandable Content Body -->
+	<div class="bg-white text-black border-t-2 border-black p-5 text-sm leading-relaxed">
+		<p class="font-medium">
 			This platform includes user-generated content, messaging,
 			and social interaction features.
 		</p>
-		<p class="mt-3">
+		<p class="mt-3 text-neutral-800">
 			Users under 18 should use social media responsibly and with
 			parental guidance where applicable.
 		</p>
-		<p class="mt-3">
+		<p class="mt-3 text-neutral-800">
 			By continuing to use this service, you acknowledge our
 			community guidelines, moderation practices, and privacy policies.
 		</p>
-		<!-- Action Buttons -->
+
+		<!-- 3. Action Navigation Links -->
 		<div class="mt-5 flex flex-wrap gap-3">
-			<a href="/terms" class="bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-neutral-200 transition">
+			<!-- ADDED: focus-visible outline states to both buttons below -->
+			<a href="/terms" class="bg-black text-white border-2 border-black px-4 py-2 font-semibold hover:bg-neutral-800 transition focus-visible:outline-3 focus-visible:outline-blue-600 focus-visible:outline-offset-4">
 				Terms
 			</a>
-			<a href="/privacy" class="border border-neutral-600 px-4 py-2 rounded-lg hover:bg-neutral-900 transition">
+			<a href="/privacy" class="bg-white text-black border-2 border-black px-4 py-2 font-semibold hover:bg-neutral-50 transition focus-visible:outline-3 focus-visible:outline-blue-600 focus-visible:outline-offset-4">
 				Privacy
 			</a>
 		</div>

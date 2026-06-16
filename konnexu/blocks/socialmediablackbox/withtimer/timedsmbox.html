@@ -1,0 +1,42 @@
+<!--
+  Konnexu Community Block: Social Media Warning Box (with timer)
+  Author: DonnaScriptTechs
+  Tutorial: https://community.konnexu.com/forum/thread/48/social-media-black-box-warning-konnexu-and-you
+-->
+<!-- Main Container Frame: Targeted via URL hash to slide closed -->
+<section id="kx-box" class="w-full max-w-2xl mx-auto my-5 p-4" role="region" aria-label="Notice">
+	<div class="w-full border-4 border-black bg-white shadow-2xl">
+
+		<!-- 1. Header Frame -->
+		<header class="flex items-center justify-between gap-4 bg-white text-black px-5 py-4 select-none">
+      <span class="flex items-center gap-3">
+        <span class="text-black text-lg font-bold" aria-hidden="true">⚠️</span>
+        <h2 class="flex flex-col m-0 p-0 normal-case tracking-normal">
+          <strong class="font-bold text-sm uppercase tracking-wide text-black">Social Media Safety Break</strong>
+          <span class="text-xs text-neutral-700 mt-1 font-normal">Mandatory platform safety verification</span>
+        </h2>
+      </span>
+
+			<!-- MINIMAL TIMER BADGE: Houses active numbers AND the hidden target-state checkmark -->
+			<span class="konnexu-timer-text">
+        <strong class="kx-static-checkmark hidden" style="display: none; visibility: hidden;">✓</strong>
+      </span>
+		</header>
+
+		<!-- 2. Text Pane & Action Group -->
+		<div class="kx-pane bg-white text-black border-t-2 border-black p-5 text-sm leading-relaxed">
+			<p class="font-medium"><strong>The Surgeon General has warned that social media is associated with significant mental health harms and has not been proven safe for young users.</strong></p>
+			<p class="mt-3 text-neutral-800">Prolonged engagement and infinite scrolling features negatively impact sleep patterns, attention span, and emotional well-being.</p>
+
+			<div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+				<div class="flex gap-3">
+					<a href="/terms" class="kx-focus bg-white text-black border-2 border-black px-4 py-2 font-semibold hover:bg-neutral-50 transition">Terms</a>
+					<a href="/privacy" class="kx-focus bg-white text-black border-2 border-black px-4 py-2 font-semibold hover:bg-neutral-50 transition">Privacy</a>
+				</div>
+				<!-- Trigger button maps to container ID to close natively -->
+				<a href="#kx-box" class="konnexu-delayed-button kx-focus bg-black text-white border-2 border-black px-6 py-2 font-bold hover:bg-neutral-800 transition text-center select-none decoration-none">Acknowledge & Continue</a>
+			</div>
+		</div>
+
+	</div>
+</section>
