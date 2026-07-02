@@ -1,0 +1,65 @@
+/**
+ * User Avatar Styles
+ * Author: DonnaScriptTechs
+ * Tutorial:
+ */
+
+/* ==========================================================================
+   1. User Avatar Square with Rounded Border Throughout the Site
+   ========================================================================== */
+/* Targets border around active user */
+div:has(> a > .avatar) {
+    border-radius: 8px !important;
+}
+
+/* Targets all avatars */
+.avatar {
+    border-radius: 8px !important;
+}
+
+/* ===============================================================================================
+   2. Larger User Avatar for Content View Pages and Larger Font for Username and Accompanying Text
+   =============================================================================================== */
+/* Only apply larger scaling on screens wider than mobile devices (768px and up) */
+@media (min-width: 768px) {
+
+    /* 1. Target row layouts inside blogs, forums, video, and photos specifically to increase spacing */
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5, /* Strict child selector protects navbar */
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 {
+        gap: 1rem !important; /* Increases layout spacing */
+    }
+
+    /* 2. STRICTLY target avatars inside the specific row layouts, ignoring navbar & member cards */
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5 img.avatar,
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5 div.avatar,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 img.avatar,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 div.avatar,
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 img.avatar,
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 div.avatar {
+        width: 4rem !important;  /* Equivalent to w-16 */
+        height: 4rem !important; /* Equivalent to w-16 */
+    }
+
+    /* 3. Upscale initials inside layout-specific placeholder avatars for those without an uploaded avatar */
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5 div.avatar span,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 div.avatar span,
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 div.avatar span {
+        font-size: 1.25rem !important; /* Scales initials with the bigger box */
+    }
+
+    /* 4. Make all author username text bigger */
+    div.rounded-md.rounded-b-none.text-sm a.text-primary-color,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 a.text-primary-color,
+    div.flex.capitalize.px-4.gap-4 a.text-primary-color {
+        font-size: 1.125rem !important; /* Equivalent to text-lg */
+    }
+
+    /* 5. Make secondary text elements slightly bigger to match */
+    div.rounded-md.rounded-b-none.text-sm p.text-muted,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 p.text-muted,
+    div.flex.capitalize.px-4.gap-4 p.text-muted,
+    div.flex.capitalize.px-4.gap-4 p.text-sm {
+        font-size: 1rem !important; /* Equivalent to text-base */
+    }
+}
