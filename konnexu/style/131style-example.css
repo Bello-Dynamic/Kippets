@@ -1,0 +1,260 @@
+/**
+ * Example stylesheet for version 1.3.1
+ * Author: DonnaScriptTechs
+ * Tutorial: https://community.konnexu.com/forum/thread/127/custom-css-new-css-style-example-for-v131
+ */
+
+/* =========================================================
+   v1.3.1 CUSTOM CSS Example
+   ========================================================= */
+
+
+/* =========================================================
+   1. LIGHT MODE THEME VARIABLES
+   ========================================================= */
+
+:root {
+    /* Shared surfaces */
+    --bg-surface: #E8DCD0 !important;
+    --surface-muted: #F0E7DE !important;
+
+    /* Shared text */
+    --text-default: #1A1816 !important;
+    --text-muted: #6E5A53 !important;
+    --text-subtle: #6E5A53 !important;
+    --text-primary: #1A1816 !important;
+    --text-secondary: #4A3E3A !important;
+
+    /* Shared primary button colors */
+    --button-primary-bg: #660000 !important;
+    --button-primary-bg-opacity-10: rgb(139 0 0 / 0.10) !important;
+    --button-primary-bg-opacity-20: rgb(139 0 0 / 0.20) !important;
+    --button-primary-bg-opacity-80: #8B0000 !important;
+    --button-primary-text: #FFFFFC !important;
+
+    /* Links */
+    --link-color: #660000 !important;
+}
+
+
+/* =========================================================
+   2. DARK MODE THEME VARIABLES
+   ========================================================= */
+
+.dark {
+    /* Shared surfaces */
+    --bg-surface: #2A211F !important;
+    --surface-muted: #211D1B !important;
+
+    /* Shared text */
+    --text-default: #EBE6E1 !important;
+    --text-muted: #A89E95 !important;
+    --text-subtle: #F3ECE3 !important;
+    --text-primary: #FFFAF5 !important;
+    --text-secondary: #D6CFC8 !important;
+
+    /* Shared primary button colors */
+    --button-primary-bg: #BB86FC !important;
+    --button-primary-bg-opacity-10: rgb(157 78 221 / 0.10) !important;
+    --button-primary-bg-opacity-20: rgb(157 78 221 / 0.20) !important;
+    --button-primary-bg-opacity-80: #9D4EDD !important;
+    --button-primary-text: #FFFFFF !important;
+
+    /* Links */
+    --link-color: #BB86FC !important;
+}
+
+
+/* =========================================================
+   3. GLOBAL BACKGROUNDS
+   ========================================================= */
+
+main {
+    background-color: #F3ECE3;
+}
+
+.header {
+    background-color: #FFFCF7;
+}
+
+
+/* =========================================================
+   4. HEADER & NAVIGATION
+   ========================================================= */
+
+.navigation_item_text {
+    color: #6E5A53 !important;
+}
+
+
+
+/* =========================================================
+   DARK MODE COMPONENT FIXES
+   ========================================================= */
+
+/* Restore the intended dark page background */
+.dark main {
+    background-color: #161514 !important;
+}
+
+/* Dark header/navigation surface */
+.dark .header {
+    background-color: #FFFCF7 !important;
+}
+
+/* Keep the main navigation readable */
+.dark .navigation_item_text {
+    color: #F3ECE3 !important;
+}
+
+/* Footer remains light in dark mode, so use light-surface colors */
+.dark footer,
+.dark footer p,
+.dark footer .text-primary-color {
+    color: #4A3E3A !important;
+}
+
+.dark footer a,
+.dark footer a#link_text {
+    color: #5A189A !important;
+}
+
+.dark footer a:hover,
+.dark footer a#link_text:hover {
+    color: #4A148C !important;
+}
+
+
+/* =========================================================
+   5. FOOTER
+   ========================================================= */
+
+footer {
+    background-color: #E8DCD0 !important;
+}
+
+footer.flex div.container.flex-col {
+    flex-direction: column-reverse !important;
+    text-align: center !important;
+}
+
+footer.flex div.container.flex-col ul {
+    justify-content: center !important;
+}
+
+
+/* =========================================================
+   6. AVATARS
+   ========================================================= */
+
+.avatar,
+a:has(.avatar) > img.avatar {
+    border-radius: 8px !important;
+}
+
+div:has(> a > img.avatar) {
+    border-radius: 10px !important;
+    overflow: hidden;
+    border-color: #8B0000 !important;
+}
+
+
+/* =========================================================
+   7. CONTENT VIEW AUTHOR AREA
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5,
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 {
+        gap: 1rem !important;
+    }
+
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5 img.avatar,
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5 div.avatar,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 img.avatar,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 div.avatar,
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 img.avatar,
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 div.avatar {
+        width: 4rem !important;
+        height: 4rem !important;
+    }
+
+    div.rounded-md.rounded-b-none.text-sm div.flex.items-center.gap-2\.5 div.avatar span,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 div.avatar span,
+    div.flex.capitalize.px-4.gap-4 div.flex.items-center.gap-2\.5 div.avatar span {
+        font-size: 1.25rem !important;
+    }
+
+    div.rounded-md.rounded-b-none.text-sm a.text-primary-color,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 a.text-primary-color,
+    div.flex.capitalize.px-4.gap-4 a.text-primary-color {
+        font-size: 1.125rem !important;
+    }
+
+    div.rounded-md.rounded-b-none.text-sm p.text-muted,
+    div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 p.text-muted,
+    div.flex.capitalize.px-4.gap-4 p.text-muted,
+    div.flex.capitalize.px-4.gap-4 p.text-sm {
+        font-size: 1rem !important;
+    }
+}
+
+
+/* =========================================================
+   8. PHOTO SECTION
+   ========================================================= */
+
+a[href*="/photos/"] article.card-content,
+article.card-content:has(img[src*="/files/photos/"]),
+div.card > div.flex.gap-3.flex-wrap.p-4:has(
+    article.card-content img[src*="/files/photos/"]
+) {
+    background: #141518 !important;
+    border-radius: 12px;
+}
+
+div.card:has(article.card-content img[src*="/files/photos/"]) {
+    border-radius: 12px 12px 0 0 !important;
+}
+
+
+/* Dark-mode status/inactive controls: improve text contrast */
+.dark .bg-buttonPrimaryBgOpacity10,
+.dark #link_text.bg-buttonPrimaryBgOpacity10,
+.dark #button_text.bg-buttonPrimaryBgOpacity10 {
+    color: #E9D5FF !important;
+}
+
+.dark .bg-buttonPrimaryBgOpacity10:hover,
+.dark #link_text.bg-buttonPrimaryBgOpacity10:hover,
+.dark #button_text.bg-buttonPrimaryBgOpacity10:hover {
+    color: #FFFFFF !important;
+}
+
+
+/* Composer "Add Link" button — actual #tab_button selector */
+.dark #tab_button.text-buttonPrimaryBg {
+    color: #D8B4FE !important;
+}
+
+.dark #tab_button.text-buttonPrimaryBg:hover {
+    color: #F3E8FF !important;
+    opacity: 1 !important;
+}
+
+/* Photo-card settings gear on dark overlay */
+.hover-backdrop .cursor-pointer > svg,
+.hover-backdrop .cursor-pointer:hover > svg {
+    color: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+    fill: none !important;
+}
+
+/* Prevent platform hover fill from filling the gear */
+.hover-backdrop .cursor-pointer > svg path,
+.hover-backdrop .cursor-pointer:hover > svg path {
+    stroke: #FFFFFF !important;
+    fill: none !important;
+}
