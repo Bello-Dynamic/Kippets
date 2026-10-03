@@ -187,7 +187,7 @@ div:has(> a > img.avatar) {
         font-size: 1.25rem !important;
     }
 
-    div.rounded-md.rounded-b-none.text-sm a.text-primary-color,
+    div.rounded-md.rounded-b-none.text-sm a.text-primary-color:not(.card-content a),
     div.flex.items-center.w-full > div.flex.items-center.gap-2\.5 a.text-primary-color,
     div.flex.capitalize.px-4.gap-4 a.text-primary-color {
         font-size: 1.125rem !important;
