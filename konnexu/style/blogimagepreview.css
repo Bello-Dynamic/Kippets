@@ -1,0 +1,54 @@
+/**
+ * Blog Image Preview Fix
+ * Author: DonnaScriptTechs
+ * Tutorial: [Add Konnexu community tutorial URL]
+ *
+ * Display complete blog images in listing thumbnails and activity feed
+ * previews without cropping. Test with your theme before publishing.
+ */
+
+/* ==========================================================================
+   1. Blog Listing Thumbnails
+   ========================================================================== */
+
+/* Desktop thumbnail container */
+.card-content > div.relative.w-40.h-40 {
+    width: 220px !important;
+    height: 180px !important;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Mobile thumbnail container */
+.card-content > div.relative.w-20.h-20 {
+    width: 120px !important;
+    height: 150px !important;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Show the entire thumbnail rather than cropping it */
+.card-content img.hover-img.object-cover {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+/* ==========================================================================
+   2. Blog Activity Feed Previews
+   ========================================================================== */
+
+/* Match feed content containing a blog link */
+div.p-4:has(a[href^="/blog/"]) > div.grid img.object-cover {
+    display: block !important;
+    width: 100% !important;
+    height: 320px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 8px !important;
+}
