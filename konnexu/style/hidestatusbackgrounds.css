@@ -1,0 +1,16 @@
+/*
+ * Hide Activity Feed Status Backgrounds
+ * Author: BookedbyMTM
+ * Tutorial: [Community tutorial URL]
+ */
+
+/* =========================================================
+   1. Activity Feed Status Background Palette
+   ========================================================= */
+
+/* Hide the background selection palette and Show More option
+   while preserving other posting controls. */
+
+.card:has(textarea#message) > .card-content > .relative.flex.flex-col > .block:has(button[aria-label="None"]):has(img[alt^="gallery-image-"]) {
+    display: none !important;
+}
