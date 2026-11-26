@@ -1,0 +1,73 @@
+/**
+ * Blog Image Preview Fix
+ * Author: DonnaScriptTechs
+ * Tutorial: https://community.konnexu.com/forum/thread/160/fix-cropped-blog-images-in-konnexu-blog-listings-and-activity-feeds
+ *
+ * Displays complete blog images in listings, featured blog blocks,
+ * and activity feed previews without cropping.
+ */
+
+/* ==========================================================================
+   1. Blog Listing Thumbnails
+   ========================================================================== */
+
+/* Desktop thumbnail container */
+.card-content.flex-row:has(a[href^="/blog/"]) > .card-content > div.relative.w-40.h-40 {
+    width: 220px !important;
+    height: 180px !important;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Mobile thumbnail container */
+.card-content.flex-row:has(a[href^="/blog/"]) > .card-content > div.relative.w-20.h-20 {
+    width: 120px !important;
+    height: 150px !important;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Display the entire blog listing image */
+.card-content.flex-row:has(a[href^="/blog/"]) > .card-content > div.relative:is(.w-40,.w-20) > img.hover-img.object-cover {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+/* ==========================================================================
+   2. Featured Blog Block
+   ========================================================================== */
+
+/* Featured Blog image container */
+.card-secondary.flex-col:has(a[href^="/blog/"]) > .card-content > a.item-media-src.h-28 {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Display the entire Featured Blog image */
+.card-secondary.flex-col:has(a[href^="/blog/"]) > .card-content > a.item-media-src.h-28 > img.hover-img.object-cover {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+/* ==========================================================================
+   3. Blog Activity Feed Previews
+   ========================================================================== */
+
+/* Match feed content containing a blog link */
+div.p-4:has(a[href^="/blog/"]) > div.grid img.object-cover {
+    display: block !important;
+    width: 100% !important;
+    height: 320px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 8px !important;
+}

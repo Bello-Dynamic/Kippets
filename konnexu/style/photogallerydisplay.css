@@ -1,0 +1,96 @@
+/**
+ * Custom Photo Gallery Display Styles
+ * Author: DonnaScriptTechs
+ * Version: 1.2
+ * Tutorial: https://community.konnexu.com/forum/thread/165/kippet-customize-your-photo-gallery-display
+ * Remove earlier overlapping photo rules before installing.
+ * Uses native Konnexu theme variables in light and dark modes.
+ */
+
+/* ==========================================================================
+   1. Card layout and theme-aware photo mat
+   ========================================================================== */
+article.card-content:has(> img.hover-img[src*="/files/photos/"]) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    height: 326px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    background: var(--surface-muted) !important;
+}
+
+/* ==========================================================================
+   2. Full photo, including portrait book covers; no hover zoom
+   ========================================================================== */
+article.card-content > img.hover-img[src*="/files/photos/"] {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: 256px !important;
+    flex: 0 0 256px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+article.card-content > img.hover-img[src*="/files/photos/"]:hover, article.card-content:hover > img.hover-img[src*="/files/photos/"] {
+    transform: none !important;
+}
+
+/* ==========================================================================
+   3. Keep card clickable, without the old dark hover backdrop
+   ========================================================================== */
+article.card-content:has(> img.hover-img[src*="/files/photos/"]) > a.hover-backdrop {
+    background: transparent !important;
+    z-index: 1 !important;
+}
+
+/* ==========================================================================
+   4. Compact, readable information footer
+   ========================================================================== */
+article.card-content:has(> img.hover-img[src*="/files/photos/"]) > div.hover-backdrop.position {
+    position: relative !important;
+    bottom: auto !important;
+    width: 100% !important;
+    flex: 1 0 70px !important;
+    min-height: 70px !important;
+    margin-top: auto !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+    background: var(--surface-muted) !important;
+    color: var(--text-default) !important;
+    border-top: 1px solid var(--text-muted) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 2 !important;
+}
+article.card-content:has(> img.hover-img[src*="/files/photos/"]) > div.hover-backdrop.position :is(p, a) {
+    color: var(--text-default) !important;
+}
+article.card-content:has(> img.hover-img[src*="/files/photos/"]) > div.hover-backdrop.position p {
+    line-height: 1.5 !important;
+}
+article.card-content:has(> img.hover-img[src*="/files/photos/"]) > div.hover-backdrop.position p:last-of-type {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    color: var(--text-default) !important;
+}
+article.card-content:has(> img.hover-img[src*="/files/photos/"]) > div.hover-backdrop.position svg {
+    color: var(--text-default) !important;
+    stroke: currentColor !important;
+}
+
+/* ==========================================================================
+   5. Featured Photos Block — display complete photos without cropping
+   ========================================================================== */
+.card:has(> div > div > .sticky-featured-icon) > .w-full > .card-secondary > .card-content > a.item-media-src[href^="/photos/view-photo/"] > span.h-36[style*="background-image"] {
+    display: block !important;
+    width: 100% !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: var(--surface-muted) !important;
+}

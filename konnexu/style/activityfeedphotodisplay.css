@@ -1,0 +1,182 @@
+/**
+ * Custom Activity Feed Photo Display Styles
+ * Author: DonnaScriptTechs
+ * Version: 1.1
+ * Tutorial: https://community.konnexu.com/forum/thread/166/kippet-customize-your-activity-feed-photo-display
+ * Remove earlier overlapping photo rules before installing.
+ * Uses native Konnexu theme variables in light and dark modes.
+ */
+
+/* ==========================================================================
+   1. 1 PHOTO: natural proportions, centered, with sensible height limit
+   ========================================================================== */
+.card-secondary > .grid:has( > a[href^="/photos/view-photo/"]:only-child ):not(:has(> :nth-child(2))) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.card-secondary > .grid:has( > a[href^="/photos/view-photo/"]:only-child ) img.object-cover.h-80 {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 8px !important;
+}
+
+/* ==========================================================================
+   2. 5–6+ VISIBLE CELLS: standard thumbnail grid, including +N album tile
+   ========================================================================== */
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-cols-1:has( > a[href^="/photos/view-photo/"] + a[href^="/photos/view-photo/"] ) {
+    align-items: stretch !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-cols-1:has( > a[href^="/photos/view-photo/"] + a[href^="/photos/view-photo/"] ) > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    height: 180px !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+    background: var(--surface-muted) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-cols-1:has( > a[href^="/photos/view-photo/"] + a[href^="/photos/view-photo/"] ) > a > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+/* ==========================================================================
+   3. +N cell: keep the existing overlay behavior
+   ========================================================================== */
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-cols-1:has( > a[href^="/photos/view-photo/"] + a[href^="/photos/view-photo/"] ) > a[href^="/photos/view-album/"] > div {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-cols-1:has( > a[href^="/photos/view-photo/"] + a[href^="/photos/view-photo/"] ) > a[href^="/photos/view-album/"] img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-cols-1:has( > a[href^="/photos/view-photo/"] + a[href^="/photos/view-photo/"] ) > a[href^="/photos/view-album/"] div.absolute {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgb(0 0 0 / 65%) !important;
+    border-radius: 8px !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-cols-1:has( > a[href^="/photos/view-photo/"] + a[href^="/photos/view-photo/"] ) > a[href^="/photos/view-album/"] h1 {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    color: #FFFFFF !important;
+    font-size: 32px !important;
+    text-shadow: 0 1px 4px rgb(0 0 0 / 65%) !important;
+}
+
+/* ==========================================================================
+   4. 3 PHOTOS: one large cell above two smaller cells
+   ========================================================================== */
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has( > a[href^="/photos/view-photo/"] + div.grid ) {
+    grid-template-rows: 220px 180px !important;
+    align-items: stretch !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has( > a[href^="/photos/view-photo/"] + div.grid ) > a, .page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has( > a[href^="/photos/view-photo/"] + div.grid ) > div.grid > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+    background: var(--surface-muted) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has( > a[href^="/photos/view-photo/"] + div.grid ) > a {
+    height: 220px !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has( > a[href^="/photos/view-photo/"] + div.grid ) > div.grid > a {
+    height: 180px !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has( > a[href^="/photos/view-photo/"] + div.grid ) a > div {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has( > a[href^="/photos/view-photo/"] + div.grid ) img:is([src*="/files/photos/"], [src*="/files/photo/"]) {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+/* ==========================================================================
+   5. 4 PHOTOS: even 2×2 grid
+   ========================================================================== */
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) {
+    grid-template-rows: repeat(2, 180px) !important;
+    align-items: stretch !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) > div.grid > a[href^="/photos/view-photo/"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    height: 180px !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+    background: var(--surface-muted) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) > div.grid > a > div {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+}
+.page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) > div.grid > a img:is([src*="/files/photos/"], [src*="/files/photo/"]) {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+/* ==========================================================================
+   6. 4 PHOTOS on narrow screens: two columns in BOTH rows
+   ========================================================================== */
+@media (max-width: 639px) {
+    .page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) {
+        grid-template-rows: auto auto !important;
+        min-width: 0 !important;
+    }
+    .page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) > div.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        min-width: 0 !important;
+    }
+    .page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) > div.grid > a {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+    .page-content.card-content > .card-secondary.p-4 > .grid.grid-rows-2:has(> div.grid.grid-cols-2 + div.grid):has(> div.grid > a[href^="/photos/view-photo/"]) > div.grid > a[href^="/photos/view-photo/"] {
+        height: 150px !important;
+    }
+}
